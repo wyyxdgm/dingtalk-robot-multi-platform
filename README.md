@@ -1,9 +1,11 @@
 # dingtalk-robot-multi-platform
 
+基于nodejs的跨平台钉钉机器人
+
 ## 功能
 
 - 支持通过 API 发消息到钉钉群。
-- 支持 gitLab 的 webhook 功能发消息到钉钉群。
+- 支持 GitLab 的 webhook 功能转发消息到钉钉群，参考项目[gitlab-dingtalk](https://github.com/wyyxdgm/gitlab-dingtalk)。
 
 ## 使用方式
 

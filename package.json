@@ -1,7 +1,7 @@
 {
   "name": "dingtalk-robot-multi-platform",
   "version": "0.0.3",
-  "description": "",
+  "description": "基于nodejs的跨平台钉钉机器人",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
