@@ -1,65 +1,90 @@
 # dingtalk-robot-multi-platform
 
-基于nodejs的跨平台钉钉机器人
+基于 nodejs 的跨平台钉钉机器人
 
 ## 功能
 
 - 支持通过 API 发消息到钉钉群。
 - 支持 GitLab 的 webhook 功能转发消息到钉钉群，参考项目[gitlab-dingtalk](https://github.com/wyyxdgm/gitlab-dingtalk)。
 
-## 使用方式
+## 使用
+
+1. 安装依赖
+
+```bash
+npm install dingtalk-robot-multi-platform -S
+```
+
+2. 填写`accessToken`，初始化并发布消息
+
+```js
+const accessToken = "xxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+(async () => {
+  const DingtalkRobot = require("dingtalk-robot-multi-platform");
+  dingtalkRobot = new DingtalkRobot(accessToken);
+  const res = await robot.sendText("hello world");
+  console.log(res);
+})();
+```
+
+## 消息类型
 
 ### text 类型
 
-```
-let robot = new DingTalkRobot('accessToken')
-
-robot.sendText('hello world')
-robot.sendText('hello ding talk', true) // 抄送所有人
+```js
+robot.sendText("hello world");
+robot.sendText("hello ding talk", true); // 抄送所有人
 ```
 
 ### link 类型
 
-```
+```js
 // 发送链接，消息点击后跳转
 robot.sendLink({
-  text: 'hello dingtalk',
-  title: 'hello wold',
-  picUrl: 'https://placeholdit.imgix.net/~text?txtsize=14&txt=FreeGroup.org+Cool&w=800&h=600',
-  messageUrl: 'http://baidu.com'
-})
+  text: "hello dingtalk",
+  title: "hello wold",
+  picUrl: "https://placeholdit.imgix.net/~text?txtsize=14&txt=FreeGroup.org+Cool&w=800&h=600",
+  messageUrl: "http://baidu.com",
+});
 ```
 
 ### markdown 类型
 
-```
+```js
 robot.sendMarkdown({
-  title: ' 注意了! 注意了!',
-  "text": `
+  title: " 注意了! 注意了!",
+  text: `
     > 说点啥呢。。。
    ![必须要截图](http://image.jpg)
    [点击看详情](http://www.taobao.cn/)
-  `
-})
+  `,
+});
 ```
 
 #### 支持的 markdown 语法
 
-```
+```markdown
 标题
+
 # 一级标题
+
 ## 二级标题
+
 ### 三级标题
+
 #### 四级标题
+
 ##### 五级标题
+
 ###### 六级标题
 
 引用
+
 > A man who stands for nothing will fall for anything.
 
 文字加粗、斜体
 **bold**
-*italic*
+_italic_
 
 链接
 [this is a link](http://name.com)
@@ -68,20 +93,21 @@ robot.sendMarkdown({
 ![](http://name.com/pic.jpg)
 
 无序列表
+
 - item1
 - item2
 
 有序列表
+
 1. item1
 2. item2
-
 ```
 
 ### 发布其他消息
 
 - 参考：https://open.dingtalk.com/document/robots/custom-robot-access
 
-#### 类型支持
+#### 原始消息类型
 
 - text 类型
 
@@ -196,6 +222,7 @@ const options = {
 #### 调用
 
 ```js
+const DingtalkRobot = require("dingtalk-robot-multi-platform");
 const options = {...}; // 根据类型生成 options
 let robot = new DingTalkRobot("accessToken");
 robot.send(options);
