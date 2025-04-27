@@ -3,6 +3,7 @@
   "version": "0.0.5",
   "description": "基于nodejs的跨平台钉钉机器人",
   "main": "lib/index.js",
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "start": "node lib/index.js"
