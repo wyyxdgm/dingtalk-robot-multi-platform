@@ -67,12 +67,8 @@ class DingTalkRobot {
   async send(contentBody: any): Promise<AxiosResponse> {
     const url = `https://oapi.dingtalk.com/robot/send?access_token=${this.accessToken}`;
     const headers = { "Content-Type": "application/json" };
-    try {
-      const response = await axios.post(url, contentBody, { headers });
-      return response;
-    } catch (error) {
-      console.error(`Error in sending message: ${error.stack}`);
-    }
+    const response = await axios.post(url, contentBody, { headers });
+    return response;
   }
 }
 
