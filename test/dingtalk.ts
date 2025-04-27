@@ -1,6 +1,6 @@
 import DingTalkRobot from '../src/index';
 
-const accessToken = 'SEC35e30f505cbdddb035fc00131f8d426aeb2d7f63561be3fc9859e86e9576ffb4';
+const accessToken = '02451476806740aae114bed7df99ac9d4edf1eb199794e2a25edc4367fa095c8';
 const robot = new DingTalkRobot(accessToken);
 
 async function sendTextMessage() {
@@ -8,7 +8,7 @@ async function sendTextMessage() {
   const isAtAll = true;
   try {
     const response = await robot.sendText(text, isAtAll);
-    console.log('Text message sent:', response.data);
+    console.log('Text message sent:', response.data); // errcode: 0, errmsg: 'ok'
   } catch (error) {
     console.error('Error sending text message:', error);
   }
@@ -18,12 +18,12 @@ async function sendLinkMessage() {
   const linkObject = {
     title: 'Test Title',
     text: 'Test Text',
-    picUrl: 'https://agi.damo.plus/files/tools/83789804-a6e6-4291-8f3c-0c0451f585f0.png?timestamp=1745752278&nonce=8eb74f3bfa85c8c0bf0175728dd0dfd3&sign=hd13Ih5P1_9rvM0N_55iufslqwxs6avnMSGZFv07zYI=',
+    picUrl: 'https://agi.damo.plus/files/tools/abbd196a-f44c-4b5e-94e7-830b5a9e83c7.png?timestamp=1745753539&nonce=2424a0abe4e741fbd284ad72e7786d68&sign=-sIMKlsYrkLDl2R9hnljtobH0zcrYlOZax8Pk49G6oE=',
     messageUrl: 'https://agi.damo.plus/chat/RE9TL3olsPoU7pv9'
   };
   try {
     const response = await robot.sendLink(linkObject);
-    console.log('Link message sent:', response.data);
+    console.log('Link message sent:', response.data); // errcode: 0, errmsg: 'ok'
   } catch (error) {
     console.error('Error sending link message:', error);
   }
@@ -44,5 +44,5 @@ async function sendMarkdownMessage() {
 
 // Uncomment the following lines to run specific tests
 // sendTextMessage();
-// sendLinkMessage();
-// sendMarkdownMessage();
+sendLinkMessage();
+sendMarkdownMessage();
