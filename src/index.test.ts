@@ -1,7 +1,5 @@
 import DingTalkRobot from './index';
 import axios from 'axios';
-// Add this line to declare jest
-/// <reference types="jest" />
 
 jest.mock('axios');
 
