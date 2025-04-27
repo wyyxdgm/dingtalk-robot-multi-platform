@@ -28,12 +28,17 @@ class DingTalkRobot {
 
   /**
    * link类型
-   * text String 必填 文本内容
    * title String 必填 消息标题
+   * text String 必填 文本内容
    * picUrl String 必填 展示图片
    * messageUrl String 必填 点击消息跳转的URL
    */
-  sendLink(linkObject: any): Promise<AxiosResponse> {
+  sendLink(linkObject: {
+    title: string;
+    text: string;
+    picUrl: string;
+    messageUrl: string;
+  }): Promise<AxiosResponse> {
     return this.send({
       msgtype: "link",
       link: linkObject,
