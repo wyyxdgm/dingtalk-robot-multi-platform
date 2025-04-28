@@ -1,6 +1,6 @@
 import DingTalkRobot from '../src/index';
 
-const accessToken = '02451476806740aae114bed7df99ac9d4edf1eb199794e2a25edc4367fa095c8';
+const accessToken = 'xxxxxxxxxx'; // 钉钉->聊天群->新增机器人->webhook->获取地址
 const robot = new DingTalkRobot(accessToken);
 
 async function sendTextMessage() {
@@ -44,5 +44,5 @@ async function sendMarkdownMessage() {
 
 // Uncomment the following lines to run specific tests
 // sendTextMessage();
-sendLinkMessage();
-sendMarkdownMessage();
+// sendLinkMessage();
+// sendMarkdownMessage();

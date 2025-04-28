@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.base.json", // 共用基础配置（可选）
+  "compilerOptions": {
+    "module": "ESNext", // 关键：输出 ESM
+    "outDir": "./dist/esm", // 输出到 esm 目录
+    "declaration": true,
+    "moduleResolution": "node",
+    "declarationDir": "./dist/esm/types"
+  },
+  "include": ["src/**/*"]
+}

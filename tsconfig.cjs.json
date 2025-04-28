@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json", // 共用基础配置（可选）
+  "compilerOptions": {
+    "module": "CommonJS",           // 关键：输出 CJS
+    "outDir": "./dist/cjs",         // 输出到 cjs 目录
+    "declaration": true,
+    "declarationDir": "./dist/cjs/types"
+  },
+  "include": ["src/**/*"]
+}
