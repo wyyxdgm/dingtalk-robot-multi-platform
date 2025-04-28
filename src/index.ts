@@ -59,7 +59,10 @@ class DingTalkRobot {
       msgtype: "markdown",
       markdown: {
         title,
-        text,
+        text:`## ${title}
+        ---
+        ${text}
+        `,
       },
     });
   }
